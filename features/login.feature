@@ -5,9 +5,10 @@ Funcionalidade: Cadastro
     Quero acessar o sistema da Rocklov
     Para que eu possa anunciar meus equipamentos musicais
 
+    @login-sucesso
     Cenario: Login do usuário
         Dado que acesso a página principal
-        Quando submeto minhas credenciais válidas
+        Quando submeto minhas credenciais com "picanco.raquel@gmail.com" e "qwerty123"
         Então sou redirecionado para o Dashboard
 
     Cenario: Senha incorreta
