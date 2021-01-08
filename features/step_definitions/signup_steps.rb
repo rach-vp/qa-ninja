@@ -14,11 +14,6 @@ Quando('submeto o seguinte formulário de cadastro:') do |table|
   click_button "Cadastrar"
 end
 
-# novo cadastro com sucesso
-Então('sou redirecionado para o Dashboard') do
-  expect(page).to have_css ".dashboard"
-end
-
 # erro ao criar cadastro
 Então('vejo a mensagem de alerta: {string}') do |expected_alert|
   alert = find('.alert.alert-dark')
