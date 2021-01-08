@@ -13,10 +13,3 @@ Quando('submeto o seguinte formulário de cadastro:') do |table|
   # sleep 5
   click_button "Cadastrar"
 end
-
-# erro ao criar cadastro
-Então('vejo a mensagem de alerta: {string}') do |expected_alert|
-  alert = find('.alert.alert-dark')
-  expect(alert.text).to eql expected_alert
-  # sleep 5
-end

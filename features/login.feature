@@ -5,33 +5,21 @@ Funcionalidade: Cadastro
     Quero acessar o sistema da Rocklov
     Para que eu possa anunciar meus equipamentos musicais
 
-    @login-sucesso
+    @login
     Cenario: Login do usuário
         Dado que acesso a página principal
         Quando submeto minhas credenciais com "picanco.raquel@gmail.com" e "qwerty123"
         Então sou redirecionado para o Dashboard
 
-    Cenario: Senha incorreta
+    Esquema do Cenario: Erro no Login
         Dado que acesso a página principal
-        Quando submeto minhas credenciais com senha incorreta
-        Então vejo a mensagem de alerta: Usuário e/ou senha inválidos.
+        Quando submeto minhas credenciais com "<email_input>" e "<password_input>"
+        Então vejo a mensagem de alerta: "<message_output>"
 
-    Cenário: Email não cadastrado
-        Dado que acesso a página principal
-        Quando submeto minhas credenciais com email que não existe na Rocklov
-        Então vejo a mensagem de alerta: Usuário e/ou senha inválidos.
-
-    Cenario: Email incorreto
-        Dado que acesso a página principal
-        Quando submeto minhas credenciais com email incorreto
-        Então vejo a mensagem de alerta: Oops. Informe um email válido!
-
-    Cenario: Email não informado
-        Dado que acesso a página principal
-        Quando submeto minhas credenciais sem o email
-        Então vejo a mensagem de alerta: Oops. Informe um email válido!
-
-    Cenario: Senha não informada
-        Dado que acesso a página principal
-        Quando submeto minhas credenciais sem a senha
-        Então vejo a mensagem de alerta: ops. Informe sua senha secreta!
+        Exemplos:
+            | email_input              | password_input | message_output                   |
+            | picanco.raquel@gmail.com | oie123         | Usuário e/ou senha inválidos.    |
+            | non-eczist@bol.com.br    | qwerty123      | Usuário e/ou senha inválidos.    |
+            | email-errado.com         | qwerty123      | Oops. Informe um email válido!   |
+            |                          | qwerty123      | Oops. Informe um email válido!   |
+            | picanco.raquel@gmail.com |                | Oops. Informe sua senha secreta! |

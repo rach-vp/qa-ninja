@@ -7,4 +7,5 @@ Quando('submeto minhas credenciais com {string} e {string}') do |email, password
   find('#password').set password
   # sleep 5
   click_button "Entrar"
+  # sleep 5
 end
