@@ -8,7 +8,9 @@ Funcionalidade: Cadastro
     @novo-cadastro
     Cenario: Fazer cadastro
         Dado que acesso a página de cadastro
-        Quando submeto o meu cadastro completo
+        Quando submeto o seguinte formulário de cadastro:
+            |      nome      |      email      | password  |
+            | Raquel Picanço | teste@gmail.com | qwerty123 |
         Então sou redirecionado para o Dashboard
 
     @tentativa-cadastro

@@ -3,14 +3,14 @@ Dado('que acesso a página de cadastro') do
 end
 
 # novo-cadastro
-Quando('submeto o meu cadastro completo') do
-  email = 'teste@gmail.com'
+Quando('submeto o seguinte formulário de cadastro:') do |table|
+  user = table.hashes.first
 
-  DB_handling.new.remove_user(email)
+  DB_handling.new.remove_user(user[:email])
 
-  find('#fullName').set Faker::Name.name
-  find('#email').set email
-  find('#password').set Faker::Alphanumeric.alpha(number: 10)
+  find('#fullName').set user[:nome]
+  find('#email').set user[:email]
+  find('#password').set user[:password]
   click_button "Cadastrar"
 end
 
