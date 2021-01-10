@@ -1,5 +1,6 @@
 Dado('que acesso a página de cadastro') do
   visit '/signup'
+  sleep 2
 end
 
 Quando('submeto o seguinte formulário de cadastro:') do |table|
@@ -10,6 +11,6 @@ Quando('submeto o seguinte formulário de cadastro:') do |table|
   find('#fullName').set user[:name]
   find('#email').set user[:email]
   find('#password').set user[:password]
-  # sleep 5
+  sleep 2
   click_button 'Cadastrar'
 end
